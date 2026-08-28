@@ -1,3 +1,4 @@
+/// <reference types="@webgpu/types" />
 import { clock, effect, frame, frameLoop, init, surface } from "vgpu";
 import type { Frame, FrameLoopHandle, Gpu } from "vgpu";
 import telemetryShader from "./hero-telemetry.wgsl";
