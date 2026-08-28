@@ -1,31 +1,33 @@
-# Grok Bot for Datadog GTM
+# Scale AI x SpaceXAI
 
-Passworded site. Grok Bot from SpaceXAI, for Datadog GTM.
+Passworded customer leave-behind for Scale AI. The site follows three SpaceXAI agents as they prepare for a meeting, support a live call, and draft the follow-up.
 
-## What it is
+## Stack
 
-Three GTM jobs on one page. Each job has a short problem statement, an interactive Grok Bot demo, and the matching Krista Letz clips under that demo. Below that: a light index of the clips and the public Grok Bot quote wall.
+- Next.js 15.5 App Router
+- React 19
+- Geist
+- vGPU and WGSL
+- TypeScript
+- Tailwind CSS 4
 
-## Run locally
+Application code lives under `src/`.
+
+## Local development
+
+Set `SITE_PASSWORD` in your shell, then run:
 
 ```bash
-cp .env.example .env.local
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Default password is `land2expand` (override with `SITE_PASSWORD`).
+Open [http://localhost:3000](http://localhost:3000).
 
-## Krista clips
+## Brand assets
 
-Download into `private/media/krista-clips/` from the GitHub release (served only through the passworded `/api/media/...` route):
+The Scale wordmark is official Scale artwork. Scale publishes logo usage and co-brand guidance at [brand.scale.com/logo](https://brand.scale.com/logo). The compact `× SpaceXAI` treatment stays between 15 and 18 pixels tall.
 
-```bash
-gh release download krista-gtm-clips-720p-2026-08-26 \
-  --repo Speediing/grok-bot-quotes \
-  --dir private/media/krista-clips
-```
+## Deployment
 
-## Deploy
-
-Preview only under the `jasonwiker` Vercel team, project name `datadog-cro`. Set `SITE_PASSWORD=land2expand`. Do not promote to a public production domain until Jason says so.
+Deploy to the `jasonwiker` Vercel scope with `SITE_PASSWORD` set in the project environment. The production alias is `scale-ai-grokbot.vercel.app`.

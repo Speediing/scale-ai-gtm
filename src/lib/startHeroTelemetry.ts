@@ -1,4 +1,3 @@
-/// <reference types="@webgpu/types" />
 import { clock, effect, frame, frameLoop, init, surface } from "vgpu";
 import type { Frame, FrameLoopHandle, Gpu } from "vgpu";
 import telemetryShader from "./hero-telemetry.wgsl";
@@ -9,7 +8,6 @@ function prefersReducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-/** Starts the hero WebGPU loop on `canvas`. Call the returned function to tear it down. */
 export function startHeroTelemetry(
   canvas: HTMLCanvasElement,
   onReady?: () => void,
