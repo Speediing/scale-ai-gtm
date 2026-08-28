@@ -2,19 +2,19 @@ import { BrandLockup } from "./BrandLockup";
 
 export function SiteNav() {
   return (
-    <header className="site-header">
+    <header className="site-header site-header-over">
       <a href="#top" className="nav-brand">
         <BrandLockup size="sm" />
       </a>
       <nav className="header-actions" aria-label="On this page">
-        <a href="#fleet">
-          Agent fleet
+        <a className="text-button" href="#jobs">
+          Use cases
         </a>
-        <a href="#stories">
-          See the work
+        <a className="text-button" href="#compare">
+          Grok Bot comparison
         </a>
-        <a className="nav-contact" href="#contact">
-          Talk with Mike
+        <a className="text-button" href="#testimonials">
+          Testimonials
         </a>
       </nav>
     </header>

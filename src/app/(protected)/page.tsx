@@ -1,112 +1,92 @@
-import {
-  AgentStorySection,
-  FleetOverview,
-} from "@/components/AgentStorySection";
-import { BrandLockup } from "@/components/BrandLockup";
+import { CompareTable } from "@/components/CompareTable";
 import { HeroTelemetry } from "@/components/HeroTelemetry";
+import { JobSection } from "@/components/JobSection";
+import { QuoteWall } from "@/components/QuoteWall";
 import { SiteNav } from "@/components/SiteNav";
-import { ACCOUNT, AGENT_STORIES } from "@/data/scale";
+import { JOBS } from "@/data/jobs";
 
 export default function HomePage() {
   return (
     <main id="top">
-      <div className="hero-shell">
-        <HeroTelemetry />
-        <div className="watercolor-field" aria-hidden>
-          <i />
-          <i />
-          <i />
-        </div>
+      <div className="hero-watercolor">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="hero-watercolor-image"
+          src="/brand/watercolor-pad.png"
+          alt=""
+        />
         <SiteNav />
-        <section className="hero">
-          <div className="hero-copy">
-            <p className="eyebrow">{ACCOUNT.title}</p>
-            <h1>Give every Scale seller a fleet of agents with computers.</h1>
-            <p className="hero-intro">
-              Scale builds reliable AI systems for critical decisions. These
-              agents bring the same discipline to the work around a customer
-              call. They open the tools, finish the task, and hand the result
-              back for review.
-            </p>
-            <div className="hero-actions">
-              <a href="#stories">See the agents work</a>
-              <span>Built as a working concept for {ACCOUNT.customer}</span>
-            </div>
-          </div>
+      </div>
 
-          <div className="hero-agents" aria-label="SpaceXAI agent fleet">
-            {AGENT_STORIES.map((story, index) => (
-              <div className="hero-agent-card" key={story.id}>
-                <span className="hero-agent-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="hero-agent-orb" aria-hidden>
-                  S
-                </span>
-                <p>
-                  <strong>{story.agent}</strong>
-                  <small>{story.computer}</small>
-                </p>
-                <span className="hero-agent-state">
-                  <i />
-                  Ready
-                </span>
-              </div>
+      <div className="report">
+        <div className="report-hero">
+          <HeroTelemetry />
+          <section className="hero">
+            <div>
+              <p className="eyebrow">A proactive agent for every Datadog rep</p>
+              <h1>The agents that work while your reps sell.</h1>
+              <p className="hero-intro">
+                Grok Bot listens to calls, watches the inbox, and researches
+                accounts in the background. Work triggers it — not another
+                prompt.
+              </p>
+            </div>
+          </section>
+
+          <section className="usecase-framing">
+            <p className="eyebrow">Three sample use cases</p>
+            <h2>
+              Grok Bot gives every seller their own fleet of always-available
+              agent teammates. Anything your sellers do today can be done
+              through Grok Bot.
+            </h2>
+            <p>These are three examples from millions — not the boundary.</p>
+          </section>
+
+          <div className="metric-grid">
+            {JOBS.map((job) => (
+              <a
+                key={job.id}
+                className="metric-card"
+                href={`#${job.id}`}
+              >
+                <div className="metric-card-top">
+                  <p>Sample {String(job.number).padStart(2, "0")}</p>
+                </div>
+                <h2>{job.title}</h2>
+                <p className="metric-trigger">Starts when {job.trigger.toLowerCase()}</p>
+              </a>
             ))}
           </div>
-        </section>
+        </div>
 
-        <div className="hero-paper-band">
-          <span className="paper-pin paper-pin-left" aria-hidden />
-          <BrandLockup size="md" />
-          <p>
-            Built for the work around a Scale customer call.
-            <span>Every external action waits for approval.</span>
-          </p>
-          <span className="paper-pin paper-pin-right" aria-hidden />
+        <div id="jobs">
+          {JOBS.map((job) => (
+            <JobSection key={job.id} job={job} />
+          ))}
         </div>
       </div>
 
-      <div className="paper-page">
-        <FleetOverview stories={AGENT_STORIES} />
+      <div className="orbit-break" aria-hidden>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/brand/watercolor-orbit.png" alt="" />
+      </div>
 
-        <div id="stories" className="stories">
-          <header className="stories-intro">
-            <p className="eyebrow">Scene by scene</p>
-            <h2>See the work move from a trigger to a finished draft.</h2>
-            <p>
-              Each frame shows one moment in time. Chat stays on the left. The
-              agent computer stays on the right. The last frame shows the
-              artifact the seller gets back.
-            </p>
-          </header>
-          {AGENT_STORIES.map((story) => (
-            <AgentStorySection key={story.id} story={story} />
-          ))}
-        </div>
-
-        <section id="contact" className="contact-band">
-          <div>
-            <p className="eyebrow">Start with one workflow</p>
-            <h2>Bring the work your sellers repeat. We will map it together.</h2>
-          </div>
-          <a href="mailto:michael.mooney@cursor.com">
-            Start with Mike
-            <span aria-hidden>↗</span>
-          </a>
-        </section>
+      <div className="report">
+        <CompareTable />
+        <QuoteWall />
       </div>
 
       <footer className="site-footer">
-        <BrandLockup size="sm" />
-        <p>
-          Prepared for {ACCOUNT.customer}
-          <span>Private working concept</span>
-        </p>
-        <address>
-          <strong>Mike Mooney</strong>
-          <a href="mailto:michael.mooney@cursor.com">
-            michael.mooney@cursor.com
+        <div>
+          <p className="footer-title">Cursor for Datadog</p>
+          <p>Grok Bot for Datadog sales</p>
+        </div>
+        <address className="footer-contact">
+          <p>Datadog&apos;s existing Cursor contact</p>
+          <strong>Madeline Ingleby</strong>
+          <a href="mailto:madeline.ingleby@cursor.com">
+            madeline.ingleby@cursor.com
           </a>
         </address>
       </footer>

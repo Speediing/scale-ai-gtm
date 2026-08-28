@@ -1,11 +1,7 @@
-export const AUTH_COOKIE = "scale_ai_session";
+export const AUTH_COOKIE = "datadog_cro_session";
 
 export function sitePassword(): string {
-  const password = process.env.SITE_PASSWORD?.trim();
-  if (!password) {
-    throw new Error("SITE_PASSWORD is required");
-  }
-  return password;
+  return process.env.SITE_PASSWORD || "land2expand";
 }
 
 function toHex(buffer: ArrayBuffer): string {
@@ -17,7 +13,7 @@ function toHex(buffer: ArrayBuffer): string {
 export async function sessionToken(
   password: string = sitePassword(),
 ): Promise<string> {
-  const data = new TextEncoder().encode(`scale-ai:${password}`);
+  const data = new TextEncoder().encode(`datadog-cro:${password}`);
   const digest = await crypto.subtle.digest("SHA-256", data);
   return toHex(digest);
 }

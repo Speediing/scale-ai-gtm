@@ -9,6 +9,7 @@ function prefersReducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
+/** Starts the hero WebGPU loop on `canvas`. Call the returned function to tear it down. */
 export function startHeroTelemetry(
   canvas: HTMLCanvasElement,
   onReady?: () => void,
