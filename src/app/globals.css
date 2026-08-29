@@ -414,7 +414,14 @@ button:active:not(:focus-visible),
   height: auto;
   max-height: min(72vh, 820px);
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 52%;
+}
+
+main > .hero-watercolor + .report {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(-7rem, -8vw, -4rem);
+  background: var(--paper);
 }
 
 .hero-telemetry {
@@ -5461,6 +5468,15 @@ button:active:not(:focus-visible),
     width: 100%;
     padding: 0 max(1.15rem, env(safe-area-inset-right)) 0
       max(1.15rem, env(safe-area-inset-left));
+  }
+
+  .hero-watercolor-image {
+    max-height: min(48vh, 380px);
+    object-position: center 50%;
+  }
+
+  main > .hero-watercolor + .report {
+    margin-top: -2.5rem;
   }
 
   .site-header {
