@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:brand-art": "node scripts/verify-brand-art.mjs"
   },
   "dependencies": {
     "geist": "^1.7.2",
