@@ -127,7 +127,7 @@ export function SiteScreen({
 
 function GranolaScreen({ account }: { account: string }) {
   return (
-    <div className="site site-granola">
+    <div className="site site-granola" aria-label={`${account} call notes`}>
       <header>
         <strong>Granola</strong>
         <span>Live notes</span>
