@@ -6,8 +6,7 @@ function OutboundPack({
 }: {
   artifact: Extract<Artifact, { kind: "outbound" }>;
 }) {
-  const contact = artifact.targets[0]?.name ?? "your buyer";
-  const firstName = contact.split(" ")[0];
+  const contact = artifact.targets[0]?.name ?? "customer contact";
 
   return (
     <div className="leave leave-out-phone">
@@ -31,21 +30,21 @@ function OutboundPack({
 
         <div className="out-phone-thread">
           <article className="out-email-card">
-            <p className="out-email-label">Draft email · 1 of 10</p>
+            <p className="out-email-label">Draft email · waiting for approval</p>
             <p className="out-email-subject">
-              Subject · {artifact.account}&apos;s last Sev-2
+              Subject · A focused model evaluation workflow
             </p>
             <div className="out-email-copy">
-              <p>Hi {firstName},</p>
+              <p>Hi {contact},</p>
               <p>
-                Your status page and open Staff SRE role point to the same
-                thing: on-call still stitches APM and logs to name a Sev-2.
+                Your public hiring and engineering work point to a more formal
+                model evaluation program.
               </p>
               <p>
-                I put together the 90-second version for your platform team.
-                Worth fifteen minutes next week?
+                I put together a short plan for one workflow, written success
+                criteria, and the team that owns the decision.
               </p>
-              <p>Sam</p>
+              <p>Mike</p>
             </div>
             <footer>
               <span>Send email</span>
@@ -54,10 +53,10 @@ function OutboundPack({
           </article>
 
           <p className="out-message is-you">
-            Send the top 10 emails. They look good.
+            Queue the strongest drafts for review.
           </p>
           <p className="out-message is-bot">
-            Top 10 sending. The rest stay queued.
+            Queued. Nothing will send without your approval.
           </p>
         </div>
 
@@ -82,7 +81,7 @@ function UpstairsMemo({
         <div>
           <p className="leave-kicker">{artifact.title}</p>
           <h3>
-            {artifact.account || "Acme"}
+            {artifact.account || "Example account"}
             {artifact.amount ? ` · ${artifact.amount}` : ""}
           </h3>
         </div>
@@ -135,7 +134,7 @@ function BetterAnswer({
     <div className="leave leave-answer">
       <header className="leave-answer-top">
         <div>
-          <p className="leave-kicker">Open source objection</p>
+          <p className="leave-kicker">Customer objection</p>
           <h3>The line that wins</h3>
         </div>
         <p className="leave-score">{artifact.score}</p>
@@ -156,10 +155,10 @@ function BetterAnswer({
           <p className="leave-kicker">Say this</p>
           <p className="leave-win">{artifact.betterAnswer}</p>
           <p className="leave-incident" aria-hidden>
-            <span>Prometheus</span>
-            <span>Grafana</span>
-            <span>Log pile</span>
-            <b>APM + Logs</b>
+            <span>Current process</span>
+            <span>Open risk</span>
+            <span>Evidence</span>
+            <b>Clear answer</b>
           </p>
         </section>
       </div>
