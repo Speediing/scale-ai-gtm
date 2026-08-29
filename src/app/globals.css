@@ -233,11 +233,6 @@ button:active:not(:focus-visible),
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-bot-demo,
-  .hero-phone-header small span,
-  .hero-phone-message,
-  .hero-phone-work,
-  .hero-phone-work-label span,
   .metric-card,
   .job-more-body {
     animation: none;
@@ -933,6 +928,16 @@ button:active:not(:focus-visible),
   70%,
   100% {
     box-shadow: 0 0 0 0.42rem rgba(91, 201, 139, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bot-demo,
+  .hero-phone-header small span,
+  .hero-phone-message,
+  .hero-phone-work,
+  .hero-phone-work-label span {
+    animation: none;
   }
 }
 
