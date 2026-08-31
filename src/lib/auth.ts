@@ -1,7 +1,7 @@
 export const AUTH_COOKIE = "scale_ai_session";
 
 export function sitePassword(): string {
-  return process.env.SITE_PASSWORD || "land2expand";
+  return process.env.SITE_PASSWORD || "posse";
 }
 
 function toHex(buffer: ArrayBuffer): string {
